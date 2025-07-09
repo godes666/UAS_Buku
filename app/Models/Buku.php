@@ -21,9 +21,7 @@ class Buku extends Model
         return $this->hasMany(Penjualan::class);
     }
 
-    /**
-     * Calculate total books sold
-     */
+    
     public function getTerjualAttribute(): int
     {
         return $this->penjualans()->sum('eksemplar');

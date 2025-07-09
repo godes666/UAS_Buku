@@ -6,15 +6,13 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+ 
     public function up(): void
     {
         Schema::create('penjualans', function (Blueprint $table) {
             $table->id();
 
-            // Foreign key dengan constraint eksplisit
+           
             $table->unsignedBigInteger('buku_id');
             $table->foreign('buku_id')
                 ->references('id')
@@ -26,13 +24,11 @@ return new class extends Migration
             $table->integer('eksemplar');
             $table->timestamps();
 
-            $table->engine = 'InnoDB'; // Wajib untuk foreign key
+            $table->engine = 'InnoDB'; 
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+    
     public function down(): void
     {
         Schema::dropIfExists('penjualans');

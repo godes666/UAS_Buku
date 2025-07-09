@@ -6,25 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    
     public function up(): void
     {
         Schema::create('bukus', function (Blueprint $table) {
-            $table->id(); // unsigned big integer (auto-increment)
+            $table->id(); 
             $table->string('judul', 255);
             $table->string('pengarang', 255);
-            $table->string('kategori', 255); // Fiksi/Non Fiksi
+            $table->string('kategori', 255); 
             $table->timestamps();
 
-            $table->engine = 'InnoDB'; // Pastikan pakai InnoDB
+            $table->engine = 'InnoDB'; 
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+    
     public function down(): void
     {
         Schema::dropIfExists('bukus');
